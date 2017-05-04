@@ -1,14 +1,15 @@
-@extends('layouts.app')
- 
-@section('content')
+@extends('layouts.dashboard')
+@section('page_heading','Blank')
+@section('section')
 <div class="container">
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>List All Claim </h2>
+                <h2>Individual </h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-danger" href="{{ route('Claim.index') }}"> Back</a>
+                <a class="btn btn-danger" href="{{ url('/listClaim') }}"> Show all Claim</a>
+                <a class="btn btn-success" href="{{ route('Claim.create') }}"> Create New Claim</a>
             </div>
         </div>
     </div>
@@ -50,6 +51,11 @@
         </td>
     </tr>
     @endforeach
+    @if(count($claims) <=0 )
+        <tr>
+            <td colspan="9"><b>Not Available</b></td>
+        </tr>
+    @endif
     </table>
 </div>
     {{ $claims->render() }}

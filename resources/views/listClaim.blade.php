@@ -1,12 +1,10 @@
-@extends('layouts.app')
- 
-@section('content')
+@extends('layouts.dashboard')
+@section('page_heading','List All Claim ')
+@section('section')
 <div class="container">
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>List All Claim </h2>
-            </div>
+            
             <div class="pull-right">
                 <a class="btn btn-danger" href="{{ route('Claim.index') }}"> Back</a>
             </div>
@@ -52,6 +50,6 @@
     @endforeach
     </table>
 </div>
-    {{ $claims->render() }}
+    {{$claims->render() }}
 
 @endsection

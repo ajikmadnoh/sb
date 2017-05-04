@@ -10,6 +10,9 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+use App\Http\Requests;
+use Illuminate\Http\Request;
+
 
 Route::get('/', function()
 {
@@ -69,21 +72,15 @@ Route::get('/blank', function()
 	return View::make('blank');
 });
 
-Route::get('/auth/login', function()
-{
-	return View::make('auth/login');
-});
-Route::get('/auth/register', function()
-{
-	return View::make('auth/register');
-});
 
 Route::get('/documentation', function()
 {
 	return View::make('documentation');
 });
-
+Route::Auth();
 Route::get('/projects', 'ProjectsController@index');
 Route::resource('ProfilPengguna','ProfilPenggunaController');
 Route::resource('BookKeep','BookKeepController');
 Route::resource('StoreKeep','StoreKeepController');
+Route::get('/listClaim', 'ListController@claim');
+Route::resource('Claim','ClaimController');

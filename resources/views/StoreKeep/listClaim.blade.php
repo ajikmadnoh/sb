@@ -44,14 +44,14 @@
         <td>
             <a class="btn btn-info" href="{{ route('Claim.show',$claim->id) }}">Show</a>
             <a class="btn btn-primary" href="{{ route('Claim.edit',$claim->id) }}">Edit</a>
-            {!! Form::open(['method' => 'DELETE','route' => ['Claim.destroy', $claim->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-            {!! Form::close() !!}
+            {{ Form::open(['method' => 'DELETE','route' => ['Claim.destroy', $claim->id],'style'=>'display:inline']) }}
+            {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+            {{ Form::close() }}
         </td>
     </tr>
     @endforeach
     </table>
 </div>
-    {!! $claims->render() !!}
+    {{ $claims->render() }}
 
 @endsection

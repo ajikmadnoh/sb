@@ -216,7 +216,7 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="{{ url('ProfilPengguna') }}"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
@@ -281,7 +281,10 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
+
+
+                 <!--  multi level dropdown
+                            <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -306,11 +309,15 @@
                                             <a href="#">Third Level Item</a>
                                         </li>
                                     </ul>
-                                    <!-- /.nav-third-level -->
+                                    <!-- /.nav-third-level 
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+                            <!-- /.nav-second-level 
+                        </li>-->
+
+
+
+
                         <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -326,9 +333,28 @@
                         <li {{ (Request::is('*documentation') ? 'class="active"' : '') }}>
                             <a href="{{ url ('documentation') }}"><i class="fa fa-file-word-o fa-fw"></i> Documentation</a>
                         </li>
-                         <li {{ (Request::is('*ItemCRUD') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('ItemCRUD') }}"><i class="fa fa-table fa-fw"></i> Claim</a>
+                         <li {{ (Request::is('*Claim') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('Claim') }}"><i class="fa fa-money fa-fw"></i> Claim</a>
                         </li>
+                        
+                        
+
+
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Records<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                 <li {{ (Request::is('*StoreKeep') ? 'class="active"' : '') }}>
+                                <a href="{{ url ('StoreKeep') }}"><i class="fa fa-file-word-o fa-fw"></i> Store Records</a>
+                        </li>
+                                 <li {{ (Request::is('*ItemCRUD') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('ItemCRUD') }}"><i class="fa fa-book  fa-fw"></i> Item</a>
+                        </li>
+                               </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+
+
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

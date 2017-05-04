@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('page_heading','Dashboard')
+@section('page_heading','item')
  
 @section('section')
 <div class="container">

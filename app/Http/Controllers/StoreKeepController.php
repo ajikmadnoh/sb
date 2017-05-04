@@ -20,14 +20,14 @@ class StoreKeepController extends Controller
     public function index(Request $request)
     {
         $claims = Claim::where('name',\Auth::user()->name)->orderBy('id','DESC')->paginate(5);
-        return view('Claim.index',compact('claims'))
+        return view('StoreKeep.index',compact('claims'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     public function claim(Request $request)
     {
         $claims = Claim::orderBy('id','DESC')->paginate(5);
-        return view('Claim.listClaim',compact('claims'))
+        return view('StoreKeep.listClaim',compact('claims'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -39,7 +39,7 @@ class StoreKeepController extends Controller
      */
     public function create()
     {
-        return view('Claim.create');
+        return view('StoreKeep.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class StoreKeepController extends Controller
         ]);
 
         Claim::create($request->all());
-        return redirect()->route('Claim.index')
+        return redirect()->route('StoreKeep.index')
                         ->with('success','Claim created successfully');
     }
 
@@ -73,7 +73,7 @@ class StoreKeepController extends Controller
     public function show($id)
     {
         $claim = Claim::find($id);
-        return view('Claim.show',compact('claim'));
+        return view('StoreKeep.show',compact('claim'));
     }
 
     /**
@@ -85,7 +85,7 @@ class StoreKeepController extends Controller
     public function edit($id)
     {
         $claim = Claim::find($id);
-        return view('Claim.edit',compact('claim'));
+        return view('StoreKeep.edit',compact('claim'));
     }
 
     /**
@@ -108,7 +108,7 @@ class StoreKeepController extends Controller
         ]);
 
         Claim::find($id)->update($request->all());
-        return redirect()->route('Claim.index')
+        return redirect()->route('StoreKeep.index')
                         ->with('Success','Claim updated successfully');
     }
 
@@ -121,7 +121,7 @@ class StoreKeepController extends Controller
     public function destroy($id)
     {
         Claim::find($id)->delete();
-        return redirect()->route('Claim.index')
+        return redirect()->route('StoreKeep.index')
                         ->with('Success','Claim deleted successfully');
     }
 

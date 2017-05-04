@@ -1,19 +1,21 @@
 @extends('layouts.dashboard')
-@section('page_heading','Store Records')
+@section('page_heading','Blank')
 @section('section')
+
+@if( Auth::check() )
 <div class="container">
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Edit Claim</h2>
+                <h2>Create New Claim</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('Claim.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('Claim.index')  }}"> Back</a>
             </div>
         </div>
     </div>
 
-    @if (count($errors) > 0)
+    @if(count($errors) > 0)
         <div class="alert alert-danger">
             <strong>Whoops!</strong> There were some problems with your input.<br><br>
             <ul>
@@ -24,7 +26,7 @@
         </div>
     @endif
 
-    {{ Form::model($claim, ['method' => 'PATCH','route' => ['Claim.update', $claim->id]]) }}
+    {{ Form::open(array('route' => 'Claim.store','method'=>'POST')) }}
     <div class="row">
 
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -72,7 +74,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Receipt:</strong>
-                {{ Form::text('receipt', null, array('placeholder' => 'Receipt','class' => 'form-control')) }}
+                {{ Form::file('receipt', null, array('placeholder' => 'Receipt','class' => 'form-control')) }}
             </div>
         </div>
 
@@ -83,4 +85,7 @@
     </div>
     {{ Form::close() }}
 </div>
+@endif
+
+
 @endsection

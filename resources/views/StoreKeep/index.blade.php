@@ -1,6 +1,6 @@
-@extends('layouts.app')
- 
-@section('content')
+@extends('layouts.dashboard')
+@section('page_heading','Store Records')
+@section('section')
 <div class="container">
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -9,7 +9,7 @@
             </div>
             <div class="pull-right">
                 <a class="btn btn-danger" href="{{ url('/listClaim') }}"> Show all Claim</a>
-                <a class="btn btn-success" href="{{ route('Claim.create') }}"> Create New Claim</a>
+                <a class="btn btn-success" href="{{ route('StoreKeep.create') }}"> Create New Claim</a>
             </div>
         </div>
     </div>
@@ -43,16 +43,16 @@
         <td>{{ $claim->tender }}</td>
         <td>{{ $claim->receipt }}</td>
         <td>
-            <a class="btn btn-info" href="{{ route('Claim.show',$claim->id) }}">Show</a>
-            <a class="btn btn-primary" href="{{ route('Claim.edit',$claim->id) }}">Edit</a>
-            {!! Form::open(['method' => 'DELETE','route' => ['Claim.destroy', $claim->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-            {!! Form::close() !!}
+            <a class="btn btn-info" href="{{ route('StoreKeep.show',$claim->id) }}">Show</a>
+            <a class="btn btn-primary" href="{{ route('StoreKeep.edit',$claim->id) }}">Edit</a>
+            {{ Form::open(['method' => 'DELETE','route' => ['StoreKeep.destroy', $claim->id],'style'=>'display:inline']) }}
+            {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+            {{ Form::close() }}
         </td>
     </tr>
     @endforeach
     </table>
 </div>
-    {!! $claims->render() !!}
+    {{ $claims->render() }}
 
 @endsection
