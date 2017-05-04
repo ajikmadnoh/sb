@@ -16,6 +16,8 @@ Route::get('/', function()
 	return View::make('home');
 });
 
+Route::resource('ItemCRUD', 'ItemCRUDController');
+
 Route::get('/charts', function()
 {
 	return View::make('mcharts');
@@ -67,12 +69,21 @@ Route::get('/blank', function()
 	return View::make('blank');
 });
 
-Route::get('/login', function()
+Route::get('/auth/login', function()
 {
-	return View::make('login');
+	return View::make('auth/login');
+});
+Route::get('/auth/register', function()
+{
+	return View::make('auth/register');
 });
 
 Route::get('/documentation', function()
 {
 	return View::make('documentation');
 });
+
+Route::get('/projects', 'ProjectsController@index');
+Route::resource('ProfilPengguna','ProfilPenggunaController');
+Route::resource('BookKeep','BookKeepController');
+Route::resource('StoreKeep','StoreKeepController');

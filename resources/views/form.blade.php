@@ -5,6 +5,8 @@
 <div class="col-sm-12">
 <div class="row">
     <div class="col-lg-6">
+
+
         <form role="form">
             <div class="form-group">
                 <label>Text Input</label>
@@ -27,6 +29,13 @@
                 <label>Text area</label>
                 <textarea class="form-control" rows="3"></textarea>
             </div>
+
+
+
+
+
+
+
             <div class="form-group">
                 <label>Checkboxes</label>
                 <div class="checkbox">
@@ -45,6 +54,12 @@
                     </label>
                 </div>
             </div>
+
+
+
+
+
+
             <div class="form-group">
                 <label>Inline Checkboxes</label>
                 <label class="checkbox-inline">
@@ -57,6 +72,9 @@
                     <input type="checkbox">3
                 </label>
             </div>
+
+
+
             <div class="form-group">
                 <label>Radio Buttons</label>
                 <div class="radio">
@@ -87,6 +105,10 @@
                     <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
                 </label>
             </div>
+
+
+
+
             <div class="form-group">
                 <label>Selects</label>
                 <select class="form-control">
@@ -111,7 +133,11 @@
             <button type="reset" class="btn btn-default">Reset Button</button>
         </form>
     </div>
+
+
+
     <div class="col-lg-6">
+
         <h2>Disabled Form States</h2>
         <form role="form">
             <fieldset disabled>
@@ -133,6 +159,10 @@
                 <button type="submit" class="btn btn-primary">Disabled Button</button>
             </fieldset>
         </form>
+
+
+
+
         <h2>Form Validation</h2>
         <form role="form">
             <div class="form-group has-success">
@@ -148,6 +178,10 @@
                 <input type="text" class="form-control" id="inputError">
             </div>
         </form>
+
+
+
+        
         <h2>Input Groups</h2>
         <form role="form">
             <div class="form-group input-group">
