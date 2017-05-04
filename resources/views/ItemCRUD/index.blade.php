@@ -1,13 +1,11 @@
 @extends('layouts.dashboard')
-@section('page_heading','item')
+@section('page_heading','Licences Records')
  
 @section('section')
 <div class="container">
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Items CRUD</h2>
-            </div>
+            
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('ItemCRUD.create') }}"> Create New Item</a>
             </div>

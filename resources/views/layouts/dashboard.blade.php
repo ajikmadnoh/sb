@@ -333,23 +333,35 @@
                         <li {{ (Request::is('*documentation') ? 'class="active"' : '') }}>
                             <a href="{{ url ('documentation') }}"><i class="fa fa-file-word-o fa-fw"></i> Documentation</a>
                         </li>
-                         <li {{ (Request::is('*Claim') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('Claim') }}"><i class="fa fa-money fa-fw"></i> Claim</a>
+
+
+                         
+                        
+                        
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Finances<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li >
+                                    <a href="{{ url ('Claim') }}"><i class="fa fa-money fa-fw"></i> Claim</a>
+                                </li>
+                                 <li >
+                                    <a href="{{ url ('listClaim') }}"><i class="fa fa-book  fa-fw"></i> List All Claims</a>
+                                 </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
-                        
-                        
 
 
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Records<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Borrow Records<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                 <li {{ (Request::is('*StoreKeep') ? 'class="active"' : '') }}>
-                                <a href="{{ url ('StoreKeep') }}"><i class="fa fa-file-word-o fa-fw"></i> Store Records</a>
-                        </li>
-                                 <li {{ (Request::is('*ItemCRUD') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('ItemCRUD') }}"><i class="fa fa-book  fa-fw"></i> Item</a>
-                        </li>
-                               </ul>
+                                <li>
+                                    <a href="{{ url ('StoreKeep') }}"><i class="fa fa-file-word-o fa-fw"></i> Store ( hardwares )</a>
+                                </li>
+                                 <li>
+                                    <a href="{{ url ('ItemCRUD') }}"><i class="fa fa-book  fa-fw"></i> Licenses</a>
+                                 </li>
+                            </ul>
                             <!-- /.nav-second-level -->
                         </li>
 
